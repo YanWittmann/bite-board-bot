@@ -1,0 +1,10 @@
+{
+  "token": "",
+  "clientId": "",
+  "dataStoragePath": "bot-data.json",
+  "googleImageApiKey": "",
+  "googleImageApiApplicationId": "",
+  "mensaMenuImagePreviewService": "googlePage",
+  "language": "de",
+  "deleteImagesAfter": 1800000
+}

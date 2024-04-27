@@ -1,0 +1,117 @@
+{
+  "command": {
+    "generic": {
+      "errorExecutingCommand": "There was am error executing your command. Please check your input or try again."
+    },
+    "menu": {
+      "baseDescription": "Fetches the menu for a specific day.",
+      "options": {
+        "today": {
+          "name": "today",
+          "description": "Fetch the menu for Today"
+        },
+        "tomorrow": {
+          "name": "tomorrow",
+          "description": "Fetch the menu for Tomorrow"
+        },
+        "overmorrow": {
+          "name": "overmorrow",
+          "description": "Fetch the menu for the day after tomorrow"
+        },
+        "monday": {
+          "name": "monday",
+          "description": "Fetch the menu for Monday"
+        },
+        "tuesday": {
+          "name": "tuesday",
+          "description": "Fetch the menu for Tuesday"
+        },
+        "wednesday": {
+          "name": "wednesday",
+          "description": "Fetch the menu for Wednesday"
+        },
+        "thursday": {
+          "name": "thursday",
+          "description": "Fetch the menu for Thursday"
+        },
+        "friday": {
+          "name": "friday",
+          "description": "Fetch the menu for Friday"
+        }
+      },
+      "response": {
+        "menu": {
+          "title": {
+            "today": "Today's Menu",
+            "tomorrow": "Tomorrow's Menu",
+            "overmorrow": "Day after Tomorrow's Menu",
+            "monday": "Monday's Menu",
+            "tuesday": "Tuesday's Menu",
+            "wednesday": "Wednesday's Menu",
+            "thursday": "Thursday's Menu",
+            "friday": "Friday's Menu"
+          },
+          "description": "Here's what's on the menu:",
+          "footer": "Menu fetched",
+          "noIngredientsDescription": "No ingredients available",
+          "noMenuName": "Menu Item",
+          "ingredients": "Inhaltsstoffe",
+          "noMenuProvider": "It seems like the menu bot is not properly configured as no menu providers were found. Please contact the bot administrator."
+        },
+        "image": {
+          "individual": {
+            "footer": "Image fetched"
+          },
+          "combined": {
+            "title": "Menu preview"
+          }
+        }
+      }
+    },
+    "settingsmenu": {
+      "baseDescription": "Allows for configuring the menu bot.",
+      "options": {
+        "setprovider": {
+          "name": "provider",
+          "description": "Change what menu provider you want to use"
+        },
+        "listproviders": {
+          "name": "listproviders",
+          "description": "List all available menu providers"
+        },
+        "periodicMenu": {
+          "name": "schedule",
+          "description": "Configure periodic menu fetching",
+          "time": {
+            "description": "A UTC timestamp in HH:MM:SS"
+          },
+          "provider": {
+            "description": "The provider to use for fetching the menu"
+          },
+          "addTime": {
+            "description": "When fetching, adds this time in minutes to the current time to find the day to fetch the menu for."
+          }
+        }
+      },
+      "response": {
+        "unknownSubcommand": {
+          "description": "Unknown subcommand... I don't know what to do!"
+        },
+        "setprovider": {
+          "success": "Successfully set the menu provider to **{0}**.",
+          "providerNotAvailable": "Provider **{0}** does not exist. Please use the 'listproviders' command to see all available providers."
+        },
+        "listproviders": {
+          "success": "Here are all available menu providers:",
+          "noProviders": "No menu providers available. Please contact the bot administrator."
+        },
+        "periodicMenu": {
+          "success": "Successfully scheduled menu fetching at **{0}** using provider **{1}**. To find the day to fetch the menu for, {2} minutes will be added to the current UTC-time.",
+          "noPermission": "You do not have permission to configure periodic menu fetching.",
+          "invalidTime": "Invalid time format. Please use HH:MM:SS in UTC.",
+          "noMenuForToday": "No menu items found for **{0}** for **{1}**. Check back again next time!"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "command": {
+    "generic": {
+      "errorExecutingCommand": "Es gab ein Fehler beim Ausführen deines Befehls. Prüfe noch einmal deine Eingaben oder versuche es noch einmal."
+    },
+    "menu": {
+      "baseDescription": "Fragt das Menü für einen bestimmten Tag ab.",
+      "options": {
+        "today": {
+          "name": "heute",
+          "description": "Das Menü für heute"
+        },
+        "tomorrow": {
+          "name": "morgen",
+          "description": "Das Menü für morgen"
+        },
+        "overmorrow": {
+          "name": "übermorgen",
+          "description": "Das Menü für übermorgen"
+        },
+        "monday": {
+          "name": "montag",
+          "description": "Das Menü für Montag"
+        },
+        "tuesday": {
+          "name": "dienstag",
+          "description": "Das Menü für Dienstag"
+        },
+        "wednesday": {
+          "name": "mittwoch",
+          "description": "Das Menü für Mittwoch"
+        },
+        "thursday": {
+          "name": "donnerstag",
+          "description": "Das Menü für Donnerstag"
+        },
+        "friday": {
+          "name": "freitag",
+          "description": "Das Menü für Freitag"
+        }
+      },
+      "response": {
+        "menu": {
+          "title": {
+            "today": "Heutiges Menü",
+            "tomorrow": "Menü Morgen",
+            "overmorrow": "Menü Übermorgen",
+            "monday": "Montagsmenü",
+            "tuesday": "Dienstagsmenü",
+            "wednesday": "Mittwochsmenü",
+            "thursday": "Donnerstagsmenü",
+            "friday": "Freitagsmenü"
+          },
+          "description": "Das gibt es zu essen:",
+          "footer": "Menü abgerufen",
+          "noIngredientsDescription": "Keine Zutaten verfügbar",
+          "noMenuName": "Menüpunkt",
+          "ingredients": "Inhaltsstoffe",
+          "noMenuProvider": "Es scheint, als wäre der Menü-Bot nicht richtig konfiguriert, da keine Menü-Provider gefunden wurden. Bitte kontaktiere den Bot-Administrator."
+        },
+        "image": {
+          "individual": {
+            "footer": "Bild abgerufen"
+          },
+          "combined": {
+            "title": "Vorschau des Menüs"
+          }
+        }
+      }
+    },
+    "settingsmenu": {
+      "baseDescription": "Ermöglicht die Konfiguration des Menü-Bots.",
+      "options": {
+        "setprovider": {
+          "name": "provider",
+          "description": "Ändere deinen persönlichen Menü-Provider"
+        },
+        "listproviders": {
+          "name": "listproviders",
+          "description": "Liste alle verfügbaren Menü-Provider auf"
+        },
+        "periodicMenu": {
+          "name": "schedule",
+          "description": "Konfiguriere regelmäßige Menü-Abfragen",
+          "time": {
+            "description": "Ein UTC timestamp in HH:MM:SS"
+          },
+          "provider": {
+            "description": "Menü-Provider für Menü-Abfragen"
+          },
+          "addTime": {
+            "description": "Diese Zeit wird in Minuten zur aktuellen Zeit hinzugefügt, um den Menü-Abruftag zu finden."
+          }
+        }
+      },
+      "response": {
+        "unknownSubcommand": {
+          "description": "Unbekannter Unterbefehl... Ich weiß nicht, was ich machen soll!"
+        },
+        "setprovider": {
+          "success": "Dein Menü-Provider wurde erfolgreich auf **{0}** gesetzt.",
+          "providerNotAvailable": "Der Provider **{0}** existiert nicht. Bitte benutze den 'listproviders' Befehl, um alle verfügbaren Provider zu sehen."
+        },
+        "listproviders": {
+          "success": "Folgende Menü-Provider sind verfügbar:",
+          "noProviders": "Es sind keine Menü-Provider verfügbar. Bitte kontaktiere den Bot-Administrator."
+        },
+        "periodicMenu": {
+          "success": "Regelmäßige Menü-Abfragen wurden erfolgreich für **{0}** UTC für diesen Channel mit provider **{1}** konfiguriert. Um den Tag für die Abfrage zu finden, werden **{2}** Minuten zur aktuellen UTC-Zeit hinzugefügt.",
+          "noPermission": "Du hast keine Berechtigung, regelmäßige Menü-Abfragen zu konfigurieren.",
+          "invalidTime": "Ungültige Zeit. Bitte gib eine UTC Zeit im Format HH:MM:SS an.",
+          "noMenuForToday": "Keine Menüpunkte für **{0}** am **{1}** gefunden. Vielleicht ja nächstes Mal!"
+        }
+      }
+    }
+  }
+}
