@@ -76,17 +76,21 @@ function setupDiscordClient() {
                 await menuSettingsCommand.execute(commandInteraction, availableMenuProviders, discordBotConfig, botData);
             }
         } catch (error) {
-            console.error(error);
+            console.error('Error while running command', error);
             try {
                 await interaction.reply({
                     content: getTranslation('command.generic.errorExecutingCommand'),
                     ephemeral: true
                 });
             } catch (error) {
-                await interaction.followUp({
-                    content: getTranslation('command.generic.errorExecutingCommand'),
-                    ephemeral: true
-                });
+                try {
+                    await interaction.followUp({
+                        content: getTranslation('command.generic.errorExecutingCommand'),
+                        ephemeral: true
+                    });
+                } catch (error) {
+                    console.error('Error sending error message', error);
+                }
             }
         }
     });

@@ -1,9 +1,9 @@
-## Bite Board-Bot
+# Bite Board-Bot
 
 A Discord bot that allows for creating custom Menu Providers that can then fetch the menu for a specific day from a
 specific canteen or other food location.
 
-### Installation
+## Installation
 
 ```batch
 git clone https://github.com/YanWittmann/bite-board-bot
@@ -13,7 +13,7 @@ npm run build
 npm run start
 ```
 
-### Configuration
+## Configuration
 
 Inside the [discord-bot-config.json](src/discord-bot-config.json) file, you need to configure the following values:
 
@@ -52,6 +52,6 @@ adding a new value to the map in [TranslationProvider.ts](src/service/Translatio
 The time in milliseconds after which the bot should delete the images it fetched for the menu embeds.
 The default is 1800000 ms, which is 30 minutes.
 
-### Usage
+## Usage
 
 TODO.
