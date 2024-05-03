@@ -109,7 +109,7 @@
           "success": "Successfully scheduled menu fetching at **{0}** using provider **{1}**. To find the day to fetch the menu for, {2} minutes will be added to the current UTC-time.",
           "noPermission": "You do not have permission to configure periodic menu fetching.",
           "invalidTime": "Invalid time format. Please use HH:MM:SS in UTC.",
-          "noMenuForToday": "No menu items found for **{0}** for **{1}**. Check back again next time!"
+          "noMenuForToday": "No menu items found for **{0}** for **{1}**."
         }
       }
     }

@@ -1,5 +1,4 @@
 import { Client, CommandInteraction, Events, GatewayIntentBits, REST, Routes, TextChannel } from 'discord.js';
-import discordBotConfigJson from './discord-bot-config.json' assert { type: 'json' };
 import { BotData } from './service/BotData.js';
 import { createImageSearchFromJson, ImageSearch } from './service/ImageSearch.js';
 import { MenuItemsProvider } from "./service/menu/MenuTypes.js";
@@ -14,6 +13,7 @@ import * as settingsmenu from './commands/settingsmenu.js';
 import {
     HochschuleMannheimWochensichtMenuProvider
 } from "./service/menu/providers/HochschuleMannheimWochensichtMenuProvider.js";
+import fs from 'fs';
 
 export interface DiscordBotConfig {
     token: string;
@@ -34,6 +34,7 @@ const availableMenuProviders: AvailableMenuProviders = {};
 new HochschuleMannheimTagessichtMenuProvider().register(availableMenuProviders);
 new HochschuleMannheimWochensichtMenuProvider().register(availableMenuProviders);
 
+const discordBotConfigJson = JSON.parse(fs.readFileSync('bite-board-config.json', 'utf8'));
 const discordBotConfig: DiscordBotConfig = discordBotConfigJson as unknown as DiscordBotConfig;
 const botData: BotData = new BotData(discordBotConfig.dataStoragePath);
 
@@ -48,13 +49,10 @@ function setupDiscordClient() {
 
     client.once(Events.ClientReady, (readyClient) => {
         console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+    });
 
-        // send into channel
-        // const channel = client.channels.cache.get('1087412251750838274');
-        // if (channel) {
-        //     (channel as TextChannel).send('Hello from the bot!')
-        //         .then(() => console.log('Message sent'));
-        // }
+    process.on('exit', code => {
+        console.log('Exiting the application with code', code);
     });
 
     const pingCommand = ping.constructCommand();

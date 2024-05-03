@@ -109,7 +109,7 @@
           "success": "Regelmäßige Menü-Abfragen wurden erfolgreich für **{0}** UTC für diesen Channel mit provider **{1}** konfiguriert. Um den Tag für die Abfrage zu finden, werden **{2}** Minuten zur aktuellen UTC-Zeit hinzugefügt.",
           "noPermission": "Du hast keine Berechtigung, regelmäßige Menü-Abfragen zu konfigurieren.",
           "invalidTime": "Ungültige Zeit. Bitte gib eine UTC Zeit im Format HH:MM:SS an.",
-          "noMenuForToday": "Keine Menüpunkte für **{0}** am **{1}** gefunden. Vielleicht ja nächstes Mal!"
+          "noMenuForToday": "Keine Menüpunkte für **{0}** am **{1}** gefunden."
         }
       }
     }

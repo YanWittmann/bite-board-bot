@@ -1,2 +1,6 @@
 dist
 node_modules
+
+# config/data files
+discord-bot-config.json
+bot-data.json
