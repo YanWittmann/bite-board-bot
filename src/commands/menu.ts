@@ -4,8 +4,8 @@ import { ImageSearch } from "../service/ImageSearch.js";
 import { Canvas, createCanvas, Image, loadImage } from 'canvas';
 import * as fs from "node:fs";
 import { getTranslation } from "../service/TranslationProvider.js";
-import { AvailableMenuProviders, DiscordBotConfig } from "../index.js";
 import { BotData } from "../service/BotData.js";
+import { AvailableMenuProviders, DiscordBotConfig } from "../BiteBoardBot.js";
 
 export function constructCommand() {
     return {

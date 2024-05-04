@@ -91,6 +91,9 @@
           "addTime": {
             "description": "Diese Zeit wird in Minuten zur aktuellen Zeit hinzugefügt, um den Menü-Abruftag zu finden."
           }
+        },
+        "time": {
+          "description": "Gibt die aktuelle Zeit als UTC timestamp in HH:MM:SS zurück."
         }
       },
       "response": {
@@ -110,6 +113,9 @@
           "noPermission": "Du hast keine Berechtigung, regelmäßige Menü-Abfragen zu konfigurieren.",
           "invalidTime": "Ungültige Zeit. Bitte gib eine UTC Zeit im Format HH:MM:SS an.",
           "noMenuForToday": "Keine Menüpunkte für **{0}** am **{1}** gefunden."
+        },
+        "time": {
+          "currentTime": "Die aktuelle UTC-Zeit ist **{0}**."
         }
       }
     }

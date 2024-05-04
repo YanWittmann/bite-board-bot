@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { MenuItemsProvider } from "./menu/MenuTypes.js";
-import { AvailableMenuProviders } from "../index.js";
+import { AvailableMenuProviders } from "../BiteBoardBot.js";
 
 export interface BotUserData {
     roles: string[];
@@ -28,7 +28,7 @@ export class BotData {
 
     constructor(path: string) {
         if (!path) {
-            throw new Error('No path provided for BotData, set the discordBotConfig.dataStoragePath to a valid path');
+            throw new Error('No path provided for BotData, set the [dataStoragePath] config value to a valid path');
         }
         this.path = path;
         this.botData = this.readData();

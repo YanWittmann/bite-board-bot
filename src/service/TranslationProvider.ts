@@ -1,15 +1,22 @@
-import en from '../lang/en.json' assert { type: 'json' };
-import de from '../lang/de.json' assert { type: 'json' };
+import fs from 'fs';
 
-const languages = {
-    en: en,
-    de: de,
+const langDir = 'lang';
+const languages: { [key: string]: any } = {};
+
+export const setupLanguages = () => {
+    const files = fs.readdirSync(langDir);
+    for (const file of files) {
+        if (file.endsWith('.json')) {
+            const lang = file.replace('.json', '');
+            languages[lang] = JSON.parse(fs.readFileSync(`${langDir}/${file}`, 'utf8'));
+        }
+    }
 };
 
 export const setLang = (lang: string) => {
     // @ts-ignore
     if (!languages[lang]) {
-        throw new Error(`Language ${lang} not supported, available languages: ${Object.keys(languages).join(', ')}`);
+        throw new Error(`Language [${lang}] not supported, available languages: [${Object.keys(languages).join(', ')}]`);
     }
     currentLanguage = lang;
 };

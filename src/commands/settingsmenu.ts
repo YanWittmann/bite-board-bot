@@ -1,6 +1,6 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 import { fillTranslation, getTranslation } from "../service/TranslationProvider.js";
-import { AvailableMenuProviders, DiscordBotConfig } from "../index.js";
+import { AvailableMenuProviders, DiscordBotConfig } from "../BiteBoardBot.js";
 import { BotData } from "../service/BotData.js";
 
 export function constructCommand(availableMenuProviders: AvailableMenuProviders) {
@@ -40,6 +40,10 @@ export function constructCommand(availableMenuProviders: AvailableMenuProviders)
                         option.setName('add')
                             .setDescription(getTranslation('command.settingsmenu.options.periodicMenu.addTime.description'))
                             .setRequired(true))
+            )
+            .addSubcommand(subcommand =>
+                subcommand.setName('time')
+                    .setDescription(getTranslation('command.settingsmenu.options.time.description'))
             ),
 
         execute: async function (interaction: CommandInteraction, menuProviders: AvailableMenuProviders, botConfig: DiscordBotConfig, botData: BotData) {
@@ -54,6 +58,9 @@ export function constructCommand(availableMenuProviders: AvailableMenuProviders)
                 listProviders(interaction, menuProviders);
             } else if (subcommand === getTranslation('command.settingsmenu.options.periodicMenu.name')) {
                 schedulePeriodicMenu(interaction, menuProviders, botData);
+            } else if (subcommand === 'time') {
+                const currentTime = new Date().toUTCString();
+                interaction.followUp(fillTranslation('command.settingsmenu.response.time.currentTime', currentTime));
             } else {
                 interaction.followUp(getTranslation('command.settingsmenu.response.unknownSubcommand.description'));
             }
@@ -63,7 +70,7 @@ export function constructCommand(availableMenuProviders: AvailableMenuProviders)
 
 function schedulePeriodicMenu(interaction: CommandInteraction, menuProviders: AvailableMenuProviders, botData: BotData) {
     const user = interaction.user.tag;
-    if (!botData.isUserRole(user, 'admin')) {
+    if (!botData.isUserRole(user, 'periodic')) {
         interaction.followUp(fillTranslation('command.settingsmenu.response.periodicMenu.noPermission'));
         console.error(`User ${user} tried to set periodic menu, but has no permission`);
         return;

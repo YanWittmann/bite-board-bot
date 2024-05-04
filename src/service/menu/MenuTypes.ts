@@ -1,4 +1,4 @@
-import { AvailableMenuProviders } from "../../index.js";
+import { AvailableMenuProviders } from "../../BiteBoardBot.js";
 
 export interface MenuTime {
     year: number;
